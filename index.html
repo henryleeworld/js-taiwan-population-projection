@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="initial-scale=1.0, user-scalable=no">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta property="og:title" content="台灣人口推估" />
+    <meta property="og:description" content="人口為國家構成的基本要素之一，人口數量及年齡結構的變化更是決定國家發展的重要關鍵。為能掌握台灣未來人口發展趨勢，每 2 年根據最新戶籍人口、出生、死亡及遷徙等相關統計資料，進行未來長期人口推估，內容包含總人口數趨勢、年齡結構變動等人口重要指標，提供政府機關做為擬定人口、教育、勞動力、產業發展、都市住宅、社會服務及醫療服務等相關政策之規劃依據。而為便於民眾一同瞭解及掌握我國未來人口樣貌，期能提升人口推估資料查詢之便利性及運用效益。" />
+    <meta property="og:locale" content="zh_TW" />
+    <meta property="og:type" content="website" />
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/openlayers/4.6.5/ol.css" type="text/css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/sidebar-v2@0.4.0/css/ol3-sidebar.min.css" />
+    <link rel="stylesheet" href="css/population-projection.css" />
+    <title>台灣人口推估</title>
+</head>
+<body>
+    <div id="sidebar" class="sidebar collapsed">
+        <div class="sidebar-tabs">
+            <ul role="tablist">
+                <li><a href="#home" role="tab"><i class="fas fa-bars"></i></a></li>
+                <li><a href="#book" role="tab"><i class="fas fa-book"></i></a></li>
+                <li><a href="#settings" role="tab"><i class="fas fa-cog"></i></a></li>
+            </ul>
+        </div>
+        <div class="sidebar-content">
+            <div class="sidebar-pane" id="home">
+                <h1 class="sidebar-header">
+                        <span id="sidebar-title">人口推估統計資料(鄉鎮市區)</span>
+                        <span class="sidebar-close"><i class="fa fa-caret-left"></i></span>
+                    </h1>
+                <div id="sidebarContent">
+                    <div id="chartdiv"></div>
+                </div>
+            </div>
+            <div class="sidebar-pane" id="book">
+                <h1 class="sidebar-header"><span id="weekTitle">說明</span><span class="sidebar-close"><i class="fa fa-caret-left"></i></span></h1>
+                <div>
+                    <p>統計圖以 2019/10 月人口資料為基礎，搭配來自<a href="https://pop-proj.ndc.gov.tw/" target="_blank">國家發展委員會「中華民國人口推估（2020 至 2065 年）」</a>的死亡率與出生率預估資料試算</p>
+                    <p>目前選擇的區域是 <span id="book-town"></span></p>
+                    <p>目前選擇的出生預估是 <span id="birth-town"></span></p>
+                </div>
+            </div>
+            <div class="sidebar-pane" id="settings">
+                <h1 class="sidebar-header"><span id="weekTitle">設定</span><span class="sidebar-close"><i class="fa fa-caret-left"></i></span></h1>
+                <div>
+                    <hr />
+                    <a href="#" class="btn btn-primary btn-lg btn-block" id="btnHigh">高出生率預估</a>
+                    <a href="#" class="btn btn-primary btn-lg btn-block" id="btnMedium">中出生率預估</a>
+                    <a href="#" class="btn btn-primary btn-lg btn-block" id="btnLow">低出生率預估</a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div id="map" class="map"></div>
+    <script src="https://cdn.polyfill.io/v2/polyfill.min.js?features=requestAnimationFrame,Element.prototype.classList,URL" defer></script>
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js" defer></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/ol3/4.6.5/ol.js" defer></script>
+    <script src="https://cdn.jsdelivr.net/npm/sidebar-v2@0.4.0/js/ol3-sidebar.min.js" defer></script>
+    <script src="//www.amcharts.com/lib/4/core.js" defer></script>
+    <script src="//www.amcharts.com/lib/4/charts.js" defer></script>
+    <script src="//www.amcharts.com/lib/4/lang/zh_Hant.js" defer></script>
+    <script src="//www.amcharts.com/lib/4/themes/animated.js" defer></script>
+    <script src="js/population-projection.js" defer></script>
+    <script src="js/chart.js" defer></script>
+</body>
+</html>
